@@ -25,7 +25,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#fff0f5; /* soft romantic pink */
+  background:#fff0f5; 
   overflow:hidden;
 }
 
@@ -283,7 +283,7 @@ video{
 <!-- PASSWORD -->
 <div id="passwordSection">
   <img src="capoo1.gif" alt="lock" class="pass-img" />
-  <div class="pass-title">enter our special date 💗</div>
+  <div class="pass-title">enter passcode to continue 💗</div>
 
   <div class="pass-dots" id="dots">
     <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -305,7 +305,7 @@ video{
     <div class="key" onclick="del()">⌫</div>
   </div>
 
-  <div class="clue">clue: first photobooth date 💞</div>
+  <div class="clue">clue: first photobooth date 📸</div>
 </div>
 
 <!-- WELCOME -->
@@ -328,7 +328,7 @@ video{
     alt="welcome"
     style="width: 180px; display: block; margin: 0 auto 20px"
 />  
-  <div class="title">are you ready to open this? 👀</div>
+  <div class="title">are you ready to open this ba? 👀</div>
   <button class="btn" onclick="show('valentine')">yesss</button>
 </div>
 
@@ -341,14 +341,14 @@ video{
     style="width: 180px; display: block; margin: 0 auto 20px"
 />  
   <div class="title">it's almost Valentine's Day 💌</div>
-  <div class="subtitle">I have something for you...</div>
+  <div class="subtitle">I have something for you... I hope im not late huhu</div>
   <button class="btn" onclick="show('videoPage')">open it</button>
 </div>
 
 <!-- VIDEO -->
 <div class="card" id="videoPage">
   <video controls>
-    <source src="daze.mp4" type="video/mp4">
+    <source src="daisy.mp4" type="video/mp4">
   </video>
   <div class="subtitle">A short collection of our memories</div>
   <button class="btn" onclick="showLetter()">letter</button>
@@ -480,21 +480,30 @@ function showLetter(){
 }
 
 function typeWriter(){
-  const text=`Happy Valentine's Day, my Baby.
+  const text=`To My Dearest Mac.
 
+So yessss, im gonna grab this chance to say how I feel about you.
 I hope you know how much I like you.
 More than I probably show sometimes.
 More than my words can fully explain.
-You mean so much to me.
-And I’m really grateful to have you in my life. 💗
+You mean so so much to me.
+And I’m really grateful to have you in my life. 
 
-I love you more than you think.
-More than I can ever properly express.
-Sometimes I don’t even know how to explain the way my heart feels when I hear you laugh.
-Or how my whole day feels lighter just because of you.
-It’s crazy.
-The good kind of crazy.
-And it’s the kind of feeling I want to keep choosing every day.
+We might have our tampuhan sometimes.
+We don’t always get everything right.
+But you never invalidate what I feel.
+You never brush me off or make me feel small.
+Instead, you try to understand me.
+You really listen.
+You reflect.
+You take accountability when you need to.
+And that means more to me than you probably realize.
+
+You’re not selfish.
+You think about us, not just yourself.
+You make decisions with “we” in mind.
+You’ve never made me question if I’m loved.
+And honestly, that says so much about the kind of person you are.
 
 I know I may argue with you sometimes.
 I know I can get tampo or quiet when I’m overwhelmed.
@@ -502,28 +511,29 @@ But thank you for being patient with me.
 Thank you for understanding me even when I struggle to understand myself.
 Thank you for always finding a way for us to be okay.
 Thank you for the constant reassurance.
-Thank you for loving me gently even on my difficult days.
+Thank you for loving me gently even on my difficult days, or for having an attitude again.
 
 My love for you is in the small things.
 In the way I remember what makes you smile.
 In the way I listen to your stories.
-In the way I care about your dreams.
+In the way I picture myself beside you while you chase everything you deserve.
 Even in my silence, please know that my heart is choosing you.
 
 You may not always see how deep it goes.
 But it’s there.
 Steady.
 Certain.
-Growing more every day.
+Growing more and more every day...
 
-If kisses were water, I would give you the ocean.
-If hugs were leaves, I would give you the whole forest.
-And if love was time, I would give you forever.
+If you could see yourself the way I do,
+you’d never question how truly special you are.
 
 I love you more than you think.
 And I will keep choosing you.
 Always.
-In all ways. 💗`
+In all ways. 
+
+Happy Valentine's Day, Baby 💗`
 ;
 
   const el=document.getElementById("typedText");
@@ -606,8 +616,15 @@ function handleNo(){
     "seriously, no?",
     "are you sure?",
     "100% no?",
-    "im gonna cry 🥺",
-    "still no?"
+    "ako nani oh 🥺",
+    "sure jud kang no?",
+    "huna hunaa please!",
+    "No No najud?",
+    "a big NO?",
+    "please nani oh",
+    "whatever!",
+    "last baa, sure NO?",
+    "che",
   ];
 
   if(noClickCount <= messages.length){
