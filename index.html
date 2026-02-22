@@ -270,6 +270,72 @@ video{
   color: #ad1457;
 }
 
+/* REPLY FLOAT BUTTON -- start */
+.reply-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#f06292;
+  color:white;
+  border:none;
+  font-size:22px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(240,98,146,0.5);
+  transition:0.3s;
+  z-index:99999;
+}
+.reply-btn:hover{
+  transform:scale(1.1);
+}
+.reply-btn:active{
+  transform:scale(0.9);
+}
+
+/* REPLY MODAL */
+#replyModal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:100000;
+}
+
+.reply-box{
+  background:white;
+  width:90%;
+  max-width:350px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  position:relative;
+  animation:fadeIn 0.3s ease;
+}
+
+.reply-box textarea{
+  width:100%;
+  height:100px;
+  border-radius:12px;
+  border:2px solid #f06292;
+  padding:10px;
+  resize:none;
+  font-family:'Fredoka',sans-serif;
+  margin-bottom:15px;
+}
+
+.reply-close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  cursor:pointer;
+  font-weight:bold;
+  color:#ad1457;
+}
+
 </style>
 </head>
 
@@ -277,7 +343,7 @@ video{
 
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
 <audio id="bgMusic" loop>
-  <source src="getyou.mp3" type="audio/mpeg">
+  <source src="prettyeyes.mp3" type="audio/mpeg">
 </audio>
 
 <!-- PASSWORD -->
@@ -308,6 +374,34 @@ video{
   <div class="clue">clue: first photobooth date 📸</div>
 </div>
 
+<!-- REPLY MODAL -->
+<div id="replyModal">
+  <div class="reply-box">
+    <div class="reply-close" onclick="closeReply()">✕</div>
+
+    <h3 style="color:#ad1457; margin-bottom:15px;">
+      send me a reply 💌
+    </h3>
+
+    <!-- NETLIFY FORM -->
+    <form name="valentine-reply" method="POST" data-netlify="true">
+      
+      <!-- Required hidden input for Netlify -->
+      <input type="hidden" name="form-name" value="valentine-reply" />
+
+      <textarea 
+        name="message" 
+        placeholder="type your message here baby 💗" 
+        required>
+      </textarea>
+
+      <button type="submit" class="btn">
+        send 💞
+      </button>
+    </form>
+
+  </div>
+</div>
 <!-- WELCOME -->
 <div class="card" id="welcome">
 <img
@@ -319,6 +413,9 @@ video{
   <div class="title">hi baby 💗</div>
   <button class="btn" onclick="show('ready')">tap hereee</button>
 </div>
+
+<!-- FLOATING REPLY BUTTON -->
+<button class="reply-btn" onclick="openReply()">💌</button>
 
 <!-- READY -->
 <div class="card" id="ready">
@@ -430,6 +527,11 @@ video{
     <button class="btn yes-btn" onclick="closePopup()">
       YES, I WILL 💞
     </button>
+
+    <!-- NETLIFY FORM DETECTION -->
+<form name="valentine-reply" data-netlify="true" hidden>
+  <input type="text" name="message" />
+</form>
 
   </div>
 </div>
@@ -693,9 +795,15 @@ function closePopup(){
   document.getElementById("lunchPopup").style.display = "none";
 }
 
+function openReply(){
+  document.getElementById("replyModal").style.display="flex";
+}
+
+function closeReply(){
+  document.getElementById("replyModal").style.display="none";
+}
+
 </script>
 
 </body>
-
 </html>
-
